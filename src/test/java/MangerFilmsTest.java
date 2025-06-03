@@ -73,6 +73,21 @@ public class MangerFilmsTest {
     }
 
     @Test
+    public void filmsFindLast2() {
+        ManagerFilms manager = new ManagerFilms(2);
+
+        manager.findLast();
+
+        manager.save("film1");
+        manager.save("film2");
+
+        String[] expected = {"film2", "film1"};
+        String[] actual = manager.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
     public void filmsFindAll() {
         ManagerFilms manager = new ManagerFilms();
 

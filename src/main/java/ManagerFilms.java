@@ -7,7 +7,7 @@ public class ManagerFilms {
     }
 
     public ManagerFilms(int result) {
-        this.result =result;
+        this.result = result;
     }
 
     public String[] findLast() {
