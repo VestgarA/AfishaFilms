@@ -1,8 +1,33 @@
 public class ManagerFilms {
-    private Afisha[] afisha = new Afisha[0];
+    private String[] afisha = new String[0];
+    private int result;
 
-    public void save(Afisha afish) {
-        Afisha[] tmp = new Afisha[afisha.length + 1];
+    public ManagerFilms() {
+        this.result = 5;
+    }
+
+    public ManagerFilms(int result) {
+        this.result =result;
+    }
+
+    public String[] findLast() {
+        int resultLength;
+
+        if (afisha.length < result) {
+            resultLength = afisha.length;
+        } else {
+            resultLength = result;
+        }
+
+        String[] tmp = new String[resultLength];
+        for (int i = 0; i < tmp.length; i++) {
+            tmp[i] = afisha[afisha.length - 1 - i];
+        }
+        return tmp;
+    }
+
+    public void save(String afish) {
+        String[] tmp = new String[afisha.length + 1];
 
         for (int i = 0; i < afisha.length; i++) {
             tmp[i] = afisha[i];
@@ -11,23 +36,11 @@ public class ManagerFilms {
         afisha = tmp;
     }
 
-    public Afisha[] findAll() {
-        Afisha[] all = afisha;
-        for (int i = 0; i < all.length; i++) {
-        }
-        return all;
+    public String[] findAll() {
+        return afisha;
     }
 
-    public Afisha[] findLast() {
-        Afisha[] all = afisha;
-        Afisha[] reversed = new Afisha[all.length];
-        for (int i = 0; i < all.length; i++) {
-            reversed[i] = all[all.length - 1 - i];
-        }
-        return reversed;
-    }
-
-    public Afisha[] getItems() {
+    public String[] getItems() {
         return afisha;
     }
 }
