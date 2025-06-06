@@ -72,7 +72,7 @@ public class MangerFilmsTest {
 
     @Test
     public void filmsLessThanLimit() {
-        ManagerFilms manager = new ManagerFilms(2);
+        ManagerFilms manager = new ManagerFilms();
 
         manager.save("film1");
         manager.save("film2");
