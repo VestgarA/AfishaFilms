@@ -16,7 +16,7 @@ public class ManagerFilms {
         if (afisha.length < result) {
             resultLength = afisha.length;
         } else {
-         resultLength = result;
+            resultLength = result;
         }
 
         String[] tmp = new String[resultLength];
