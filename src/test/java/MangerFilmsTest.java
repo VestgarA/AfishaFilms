@@ -53,8 +53,7 @@ public class MangerFilmsTest {
 
     @Test
     public void filmsMoreThanLimit() {
-        ManagerFilms manager = new ManagerFilms(7);
-
+        ManagerFilms manager = new ManagerFilms();
 
         manager.save("film1");
         manager.save("film2");
@@ -64,9 +63,8 @@ public class MangerFilmsTest {
         manager.save("film6");
         manager.save("film7");
 
-        String[] expected = {"film7", "film6", "film5", "film4", "film3", "film2", "film1"};
+        String[] expected = {"film7", "film6", "film5", "film4", "film3"};
         String[] actual = manager.findLast();
-
         Assertions.assertArrayEquals(expected, actual);
     }
 
